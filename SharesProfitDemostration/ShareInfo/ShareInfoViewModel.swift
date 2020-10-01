@@ -49,16 +49,12 @@ class ShareInfoViewModel: ObservableObject {
                 i += 1
             }
             
-            if i == stocks.count - 1 {
-                break
-            }
-            
-            var deal = Deal()
+            let deal = Deal()
             deal.buy = stocks[i]
             i += 1
             
             // find local max
-            while (i < stocks.count) && (stocks[i].value >= stocks[i - 1].value) {
+            while i < stocks.count && (stocks[i].value >= stocks[i - 1].value) {
                 i += 1
             }
             
